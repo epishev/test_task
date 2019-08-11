@@ -1,0 +1,180 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-08-11T19:03:55.788Z",
+    "end": "2019-08-11T19:03:59.827Z",
+    "duration": 4039,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6f26c145-0ec3-44a8-9806-b79544efa37e",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3647dfaa-9d57-4827-92c1-13061da7a827",
+          "title": "Cards toolbar",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "applied column should have cards without left arrow",
+              "fullTitle": "Cards toolbar applied column should have cards without left arrow",
+              "timedOut": null,
+              "duration": 1121,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_CrewPage.default.moveAllCardsToColumn('applied');\n_CrewPage.default.appliedColumn.crewCard.leftArrow.should('not.exist');\n_CrewPage.default.appliedColumn.crewCard.container.then(function ($el) {\n  var cardsLength = $el.length;\n  _CrewPage.default.appliedColumn.crewCard.rightArrow.should('have.length', cardsLength);\n});",
+              "err": {},
+              "uuid": "18d5019c-c692-4c47-998a-201bb06cd5f6",
+              "parentUUID": "3647dfaa-9d57-4827-92c1-13061da7a827",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "interviewing column should have cards with both left and right arrows",
+              "fullTitle": "Cards toolbar interviewing column should have cards with both left and right arrows",
+              "timedOut": null,
+              "duration": 606,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_CrewPage.default.moveAllCardsToColumn('interviewing');\n_CrewPage.default.interviewingColumn.crewCard.container.then(function ($el) {\n  var cardsLength = $el.length;\n  _CrewPage.default.interviewingColumn.crewCard.rightArrow.should('have.length', cardsLength);\n  _CrewPage.default.interviewingColumn.crewCard.leftArrow.should('have.length', cardsLength);\n});",
+              "err": {},
+              "uuid": "e0a156a5-796a-417e-bffa-05aed9aaa796",
+              "parentUUID": "3647dfaa-9d57-4827-92c1-13061da7a827",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "hired column should have cards without right arrow",
+              "fullTitle": "Cards toolbar hired column should have cards without right arrow",
+              "timedOut": null,
+              "duration": 815,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_CrewPage.default.moveAllCardsToColumn('hired');\n_CrewPage.default.hiredColumn.crewCard.rightArrow.should('not.exist');\n_CrewPage.default.hiredColumn.crewCard.container.then(function ($el) {\n  var cardsLength = $el.length;\n  _CrewPage.default.hiredColumn.crewCard.leftArrow.should('have.length', cardsLength);\n});",
+              "err": {},
+              "uuid": "9124870a-4cd9-4797-96ba-4a853dfc36b5",
+              "parentUUID": "3647dfaa-9d57-4827-92c1-13061da7a827",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "right arrow should move card into correct column",
+              "fullTitle": "Cards toolbar right arrow should move card into correct column",
+              "timedOut": null,
+              "duration": 465,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_CrewPage.default.moveAllCardsToColumn('applied');\n_CrewPage.default.appliedColumn.crewCard.rightArrow.first().click();\n_CrewPage.default.interviewingColumn.crewCard.container.should('have.length', 1);\n_CrewPage.default.interviewingColumn.crewCard.rightArrow.first().click();\n_CrewPage.default.hiredColumn.crewCard.container.should('have.length', 1);",
+              "err": {},
+              "uuid": "60e51921-eac3-48d8-b467-e395bfe054a7",
+              "parentUUID": "3647dfaa-9d57-4827-92c1-13061da7a827",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "left arrow should move card into correct column",
+              "fullTitle": "Cards toolbar left arrow should move card into correct column",
+              "timedOut": null,
+              "duration": 980,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_CrewPage.default.moveAllCardsToColumn('hired');\n_CrewPage.default.hiredColumn.crewCard.leftArrow.first().click();\n_CrewPage.default.interviewingColumn.crewCard.container.should('have.length', 1);\n_CrewPage.default.interviewingColumn.crewCard.leftArrow.first().click();\n_CrewPage.default.appliedColumn.crewCard.container.should('have.length', 1);",
+              "err": {},
+              "uuid": "97496650-fbdd-4e41-8de8-ba44951684c3",
+              "parentUUID": "3647dfaa-9d57-4827-92c1-13061da7a827",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "18d5019c-c692-4c47-998a-201bb06cd5f6",
+            "e0a156a5-796a-417e-bffa-05aed9aaa796",
+            "9124870a-4cd9-4797-96ba-4a853dfc36b5",
+            "60e51921-eac3-48d8-b467-e395bfe054a7",
+            "97496650-fbdd-4e41-8de8-ba44951684c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3987,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "5.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "4.0.1"
+    }
+  }
+}

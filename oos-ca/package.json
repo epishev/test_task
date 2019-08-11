@@ -1,0 +1,41 @@
+{
+  "name": "crew-applications",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "informed": "^1.10.5",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "redux-localstorage": "^0.4.1",
+    "styled-components": "^3.4.6"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "cypress:e2e": "cypress open",
+    "cypress:e2e-ci": "cypress run --browser chrome",
+    "cleanup": "rm -fr mochawesome-report",
+    "merge_reports": "mochawesome-merge --reportDir mochawesome-report > mochawesome-report/output.json",
+    "generate_mochawesome_report": "marge mochawesome-report/output.json",
+    "report-open": "open mochawesome-report/output.html",
+    "cypress:e2e-mochawesome": "npm run cleanup; npm run cypress:e2e-ci; npm run merge_reports; npm run generate_mochawesome_report;npm run report-open"
+  },
+  "devDependencies": {
+    "cypress": "^3.4.1",
+    "cypress-image-snapshot": "^3.1.1",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "mocha": "5.2.0",
+    "mochawesome": "^4.1.0",
+    "mochawesome-merge": "^2.0.1"
+  }
+}
