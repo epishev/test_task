@@ -36,6 +36,8 @@ class CrewPage {
                 this.interviewingColumn.crewCard.rightArrow.each($arrow => {
                     cy.wrap($arrow).click();
                 });
+            default:
+                cy.log('Wrong column name!!');
         }
     }
 }

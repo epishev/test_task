@@ -26,6 +26,9 @@
     "report-open": "open mochawesome-report/output.html",
     "cypress:e2e-mochawesome": "npm run cleanup; npm run cypress:e2e-ci; npm run merge_reports; npm run generate_mochawesome_report;npm run report-open"
   },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
   "devDependencies": {
     "cypress": "^3.4.1",
     "cypress-image-snapshot": "^3.1.1",
