@@ -4,13 +4,13 @@ class CrewCard {
         this.elementLocator = value => `[data-test="crew-card-${value}"]`;
     }
 
-        //ui elements
-        get container() {
-        if(this.containerLocator === 'crew-card-container') {
+    //ui elements
+    get container() {
+        if (this.containerLocator === 'crew-card-container') {
             return cy.getTest('crew-card-container');
         }
         return cy.get(`[data-test="${this.containerLocator}-column"]`)
-                 .find(`${this.elementLocator('container')}`);
+            .find(`${this.elementLocator('container')}`);
     }
 
     get photo() {
@@ -36,6 +36,7 @@ class CrewCard {
     get rightArrow() {
         return this.container.find(`${this.elementLocator('right-button')}`);
     }
+
     //ui actions
     moveLeft() {
         this.leftArrow.click();

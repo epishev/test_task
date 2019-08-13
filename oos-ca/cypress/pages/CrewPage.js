@@ -11,6 +11,10 @@ class CrewPage {
     hiredColumn = new Column('hired');
     crewCard = new CrewCard();
 
+    get tableBody() {
+        return cy.getTest('crews-table-container');
+    }
+
     moveAllCardsToColumn(columnName) {
         switch (columnName) {
             case 'applied':

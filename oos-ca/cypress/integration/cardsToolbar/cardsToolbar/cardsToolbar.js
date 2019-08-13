@@ -1,16 +1,16 @@
-import { Then } from "cypress-cucumber-preprocessor/steps";
+import {Then} from "cypress-cucumber-preprocessor/steps";
 import crewPage from '../../../pages/CrewPage';
 
 Then("I see {string} column cards don't have {string} arrows", (columnName, arrow) => {
     let column;
-    if(columnName === 'Applied') {
+    if (columnName === 'Applied') {
         column = crewPage.appliedColumn;
-    } else if(columnName === 'Interviewing') {
+    } else if (columnName === 'Interviewing') {
         column = crewPage.interviewingColumn;
-    } else if(columnName === 'Hired') {
+    } else if (columnName === 'Hired') {
         column = crewPage.hiredColumn;
     }
-    if(arrow === 'left') {
+    if (arrow === 'left') {
         column.crewCard.leftArrow.should('not.exist');
         column.crewCard.container.then($el => {
             const cardsLength = $el.length;
@@ -25,7 +25,7 @@ Then("I see {string} column cards don't have {string} arrows", (columnName, arro
     }
 });
 
-Then ("I see Interview column should have all arrows", () => {
+Then("I see Interview column should have all arrows", () => {
     crewPage.interviewingColumn.crewCard.container.then($el => {
         const cardsLength = $el.length;
         crewPage.interviewingColumn.crewCard.rightArrow.should('have.length', cardsLength);
@@ -33,18 +33,18 @@ Then ("I see Interview column should have all arrows", () => {
     });
 });
 
-Then ("I move first card to {string} from {string} column", (arrow, columnName) => {
+Then("I move first card to {string} from {string} column", (arrow, columnName) => {
     let column;
-    if(columnName === 'Applied') {
+    if (columnName === 'Applied') {
         column = crewPage.appliedColumn;
-    } else if(columnName === 'Interviewing') {
+    } else if (columnName === 'Interviewing') {
         column = crewPage.interviewingColumn;
-    } else if(columnName === 'Hired') {
+    } else if (columnName === 'Hired') {
         column = crewPage.hiredColumn;
     }
-    if(arrow === 'right') {
+    if (arrow === 'right') {
         column.crewCard.rightArrow.first().click();
-    } else if(arrow === 'left') {
+    } else if (arrow === 'left') {
         column.crewCard.leftArrow.first().click();
     }
 
@@ -52,11 +52,11 @@ Then ("I move first card to {string} from {string} column", (arrow, columnName) 
 
 Then("I see {string} column has 1 member card", (columnName) => {
     let column;
-    if(columnName === 'Applied') {
+    if (columnName === 'Applied') {
         column = crewPage.appliedColumn;
-    } else if(columnName === 'Interviewing') {
+    } else if (columnName === 'Interviewing') {
         column = crewPage.interviewingColumn;
-    } else if(columnName === 'Hired') {
+    } else if (columnName === 'Hired') {
         column = crewPage.hiredColumn;
     }
     column.crewCard.container.should('have.length', 1);

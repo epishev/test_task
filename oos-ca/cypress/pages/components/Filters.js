@@ -25,19 +25,20 @@ class Filters {
         this.submitButton.click();
         return this;
     }
+
     clear() {
         this.clearButton.click();
         return this;
     }
 
     useFilter(config) {
-        if(config.name) {
+        if (config.name) {
             this.nameInput.type(config.name);
         }
-        if(config.city) {
+        if (config.city) {
             this.cityInput.type(config.city);
         }
-        if(!config.name && !config.city) {
+        if (!config.name && !config.city) {
             throw new Error('Incorrect method usage: Need to enter some text in the input fields!!');
         }
         this.submit();

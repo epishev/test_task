@@ -3,6 +3,7 @@ class Header {
     get container() {
         return cy.getTest('header');
     }
+
     get title() {
         return cy.getTest('header-title');
     }

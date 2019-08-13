@@ -7,7 +7,7 @@ Cypress.Commands.add('getTest', (selector, opts) => {
     return cy.get(finalSelector, opts);
 });
 
-import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
+import {addMatchImageSnapshotCommand} from 'cypress-image-snapshot/command';
 
 addMatchImageSnapshotCommand();
 

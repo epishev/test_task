@@ -1,5 +1,10 @@
-import { Then } from "cypress-cucumber-preprocessor/steps";
+import {Then} from "cypress-cucumber-preprocessor/steps";
 import crewPage from '../../../pages/CrewPage';
+
+When("I am looking at {string} input on the filter section", (input) => {
+    const filterInput = input === 'name' ? crewPage.filters.nameInput : crewPage.filters.cityInput;
+    filterInput.should('be.visible')
+});
 
 Then("I check that filter by full name works as expected", () => {
     crewPage.crewCard.name.then($el => {
@@ -51,11 +56,11 @@ Then("I check that filter by partial city text works as expected", () => {
 
 Then("I check that filter by partial city and name text works as expected", () => {
     crewPage.crewCard.name.then($name => {
-        const searchName = $name[$name.length - 1].innerText.substring(0,3);
+        const searchName = $name[$name.length - 1].innerText.substring(0, 3);
         crewPage.crewCard.city.then($city => {
-            const searchCity = $city[$city.length - 1].innerText.substring(0,3);
+            const searchCity = $city[$city.length - 1].innerText.substring(0, 3);
 
-            crewPage.filters.useFilter({name:searchName, city: searchCity});
+            crewPage.filters.useFilter({name: searchName, city: searchCity});
             crewPage.crewCard.name.each(name => {
                 expect(name.text()).to.contain(searchName);
             });
@@ -67,7 +72,7 @@ Then("I check that filter by partial city and name text works as expected", () =
 });
 
 Then("I check that clear button remove all cards to columns", () => {
-    crewPage.crewCard.container.then( cards => {
+    crewPage.crewCard.container.then(cards => {
         const defaultLength = cards.length;
         crewPage.filters.useFilter({name: '$%@#$@#$@#$@#'});
         crewPage.crewCard.container.should('not.exist');

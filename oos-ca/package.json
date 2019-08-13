@@ -39,6 +39,7 @@
     "eslint-plugin-react": "^7.11.1",
     "mocha": "5.2.0",
     "mochawesome": "^4.1.0",
-    "mochawesome-merge": "^2.0.1"
+    "mochawesome-merge": "^2.0.1",
+    "cypress-cucumber-preprocessor": "^1.13.1"
   }
 }

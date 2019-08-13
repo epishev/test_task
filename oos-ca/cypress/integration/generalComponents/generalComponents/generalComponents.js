@@ -1,27 +1,31 @@
-import { Then } from "cypress-cucumber-preprocessor/steps";
+import {Then, When} from "cypress-cucumber-preprocessor/steps";
 import crewPage from '../../../pages/CrewPage';
 
-Then('I see header is present', () => {
+When('I am looking at header on the Page', () => {
     crewPage.header.container.should('be.visible');
 });
 
-Then (`I see header title has {string} text`, (text) => {
+When('I am looking at table section on the Page', () => {
+    crewPage.tableBody.should('be.visible');
+});
+
+Then(`I see header title has {string} text`, (text) => {
     crewPage.header.title.should('have.text', text);
 });
 
-Then (`I see header has required logo`, () => {
+Then(`I see header has required logo`, () => {
     crewPage.header.container.matchImageSnapshot('header');
 });
 
-Then (`I see {string} column has title {string}`, (columnName, columnTitle) => {
+Then(`I see {string} column has title {string}`, (columnName, columnTitle) => {
     let column = crewPage.appliedColumn;
-     if (columnName === 'Interviewing') {
-         column = crewPage.interviewingColumn;
-     }
-     if(columnName === 'Hired') {
-         column = crewPage.hiredColumn;
-     }
-     column.title.should('have.text', columnTitle);
+    if (columnName === 'Interviewing') {
+        column = crewPage.interviewingColumn;
+    }
+    if (columnName === 'Hired') {
+        column = crewPage.hiredColumn;
+    }
+    column.title.should('have.text', columnTitle);
 });
 
 Then('I see all crew cards have photo,name,city, toolbar', () => {
