@@ -28,6 +28,7 @@ App will be available on http://localhost:5000
  - Clone repository: perform command git clone https://github.com/epishev/test_task.git and go to test_task/
 oos-ca directory
  - Perform command `yarn install`
+ - Don't forget to run application localy `yarn start`
  
 ### Running localy
   `yarn run cypress:e2e`
